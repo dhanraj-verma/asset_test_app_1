@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:test_assets/reusable_widgets/form_field.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -20,6 +22,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  bool _languageTougle = true;
 
   void _incrementCounter() {
     setState(() {
@@ -45,6 +48,21 @@ class _MyHomePageState extends State<MyHomePage> {
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
+        backgroundColor: Colors.green,
+        actions: [
+          Switch(
+              value: _languageTougle,
+              onChanged: (value) {
+                if (value) {
+                  Get.updateLocale(const Locale('en', 'US'));
+                } else {
+                  Get.updateLocale(const Locale('hi', 'IN'));
+                }
+                setState(() {
+                  _languageTougle = value;
+                });
+              })
+        ],
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
@@ -66,6 +84,10 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Text('hello'.tr),
+            const OrderCreditFormField(
+              label: "Saple test",
+            ),
             Image.asset(
               'images/dart_logo.png',
               package: 'test_assets',

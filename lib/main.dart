@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
+import 'package:test_app_1/locale_string_literal.dart';
 
 import 'my_home.dart';
 
@@ -12,7 +14,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      translations: LocaleStringLiteral(),
+      locale: Get.deviceLocale,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
