@@ -189,7 +189,7 @@ packages:
     description:
       path: "."
       ref: master
-      resolved-ref: a2a2b721097c8fa1ef61579d621c3d4925d134cb
+      resolved-ref: a9703bc090bde81f09a69e4a04ea3577a6e3bc7b
       url: "git@github.com:dhanraj-verma/test_assets.git"
     source: git
     version: "0.0.1"

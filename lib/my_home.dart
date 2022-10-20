@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:test_assets/reusable_widgets/form_field.dart';
+import 'package:test_assets/reusable_widgets/localized_string_map.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -84,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text('hello'.tr),
+            Text(LocalizedStringKeys.hello.tr),
             const OrderCreditFormField(
               label: "Saple test",
             ),
